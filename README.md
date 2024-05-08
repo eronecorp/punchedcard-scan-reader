@@ -6,11 +6,14 @@ The image scanner feature is based on [Jerome Flesch's libinsane library](https:
 
 The program is actually 2 python scripts linked together: first, scan.py detects if an image scanner device is plugged in, launches the scanning process, saves the image locally and launches the second program, punchedCardReader.py. The punchedCardReader script attempts to scan images of IBM 80 column punch cards extracting any recognisable text.
 
-Also included in this repo is a modified version of these scripts created for my diploma project, Compost Numérique. The project's goal was to create a solution to store HTML webpages on punchcards. This modded version reads the content of the punched card, loads it in an .html file and opens the file using your default internet browser.
+Also included in this repo is a modified version of these scripts called HTMLpunchedCardScanReader created for my diploma project, Compost Numérique. The project's goal was to create a solution to store HTML webpages on punchcards. This modded version reads the content of the punched card, loads it in an .html file and opens the file using your default internet browser.
 
-Launch options for the punchCardReader script below must be edited in the last lines of the scan.py code, inside the "subprocess" function.
 
 # Usage
+
+Make sure your image scanner device is plugged in and recognized by your computer, then launch scan.py by specifying "card.png" as a launch option.
+
+Launch options for the punchCardReader script below must be edited in the last couple lines of the scan.py code, inside the "subprocess" function.
 
 ```
 Usage: punchedCardReader.py [options] image [image...]
