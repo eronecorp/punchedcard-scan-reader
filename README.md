@@ -1,11 +1,14 @@
-# punchedcardreader
-IBM Punched Card reader - extract text from images of cards
+# punchedcard scan reader
+IBM Punched Card scanner and reader - extract text from scanned images of cards
 
-The punchedCardReader python script attempts to scan images of IBM 80 column punch cards extracting any recognisable text.
+This is a fork of [Michael Hamilton and digitaltrails' punched card reader](https://github.com/digitaltrails/punchedcardreader), with the added functionnality of interfacing with an image scanner device to scan actual paper punch cards in real time, rather than loading an already saved image.
+The image scanner feature is based on [Jerome Flesch's libinsane library](https://gitlab.gnome.org/World/OpenPaperwork/libinsane/), specifically his scan.py example.
 
-An older version of this script is described at [http://codeincluded.blogspot.com/2012/07/punchcard-reader-software.html](http://codeincluded.blogspot.com/2012/07/punchcard-reader-software.html).  The version deposited here is a more recent refactoring of the original that includes several tidy ups and a few new features.
+The program is actually 2 python scripts linked together: first, scan.py detects if an image scanner device is plugged in, launches the scanning process, saves the image locally and launches the second program, punchedCardReader.py. The punchedCardReader script attempts to scan images of IBM 80 column punch cards extracting any recognisable text.
 
-(__Link to the [bonus javascript card punch](https://digitaltrails.github.io/punchedcardreader/js-cardpunch.html)__ - __punch yourself a tshirt__)
+Also included in this repo is a modified version of these scripts created for my diploma project, Compost Numérique. The project's goal was to create a solution to store HTML webpages on punchcards. This modded version reads the content of the punched card, loads it in an .html file and opens the file using your default internet browser.
+
+Launch options for the punchCardReader script below must be edited in the last lines of the scan.py code, inside the "subprocess" function.
 
 # Usage
 
